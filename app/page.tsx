@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -95,7 +96,7 @@ export default function Home() {
           message: data.error || 'Failed to send message. Please try again.'
         });
       }
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus({
         type: 'error',
         message: 'An error occurred. Please try again later.'
@@ -264,7 +265,7 @@ export default function Home() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <div className="p-2 bg-accent/10 rounded-lg backdrop-blur-sm">
-                    <img src="/vectorwitch-logo.svg" alt="VectorWitch" className="h-6 w-6 dark:invert" />
+                    <Image src="/vectorwitch-logo.svg" alt="VectorWitch" width={24} height={24} className="h-6 w-6 dark:invert" />
                   </div>
                   <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity" />
                 </div>
